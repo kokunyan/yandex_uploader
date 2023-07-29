@@ -11,9 +11,9 @@ function Root(): JSX.Element {
     script.src =
       "https://yastatic.net/s3/passport-sdk/autofill/v1/sdk-suggest-with-polyfills-latest.js";
     script.async = true;
-    document.body.appendChild(script);
+    document.head.appendChild(script);
     return () => {
-      document.body.removeChild(script);
+      document.head.removeChild(script);
     };
   }, []);
 
@@ -22,7 +22,7 @@ function Root(): JSX.Element {
       window.onload = function () {
         window.YaAuthSuggest.init(
           {
-            client_id: "95fd64ca90774e0a92acfb5c52cdd652",
+            client_id: import.meta.env.VITE_YANDEX_CLIENT_ID,
             response_type: "token",
             redirect_uri: "http://localhost:5173/auth",
           },

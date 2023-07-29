@@ -80,4 +80,13 @@ ul {
 
 #yandex-auth {
   margin-top: 30px;
+  background-color: #434777;
+  height: 40px;
+}
+
+#yandex-auth:after {
+  content: "Скрипт Яндекса подгружается...";
+  color: white;
+  display: block;
+  padding-top: 7.5px;
 }
